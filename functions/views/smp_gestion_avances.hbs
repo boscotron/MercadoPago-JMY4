@@ -1,0 +1,160 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Supervisión</h4>
+                <p class="category">Texto texto texto texto texto texto texto texto</p>
+            </div>
+            <div class="card-content table-responsive table-full-width">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Dependencia</th>
+                            <th>Programa</th>
+                            <th>Responsable</th>
+                            <th>Progreso</th>
+                            <th class="text-right">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center">1</td>
+                            <td>Nombre dependencia</td>
+                            <td>Programa 1</td>
+                            <td>Nombre Responsable</td>
+                            <td class="text-right">
+                                <div class="progress" style="height: 18px;">
+                                 <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                </div></td>
+                            <td class="td-actions text-right">
+                                <a data-toggle="modal" data-target="#exampleModal"  rel="tooltip" title="Detalles" class="btn btn-success btn-simple btn-xs">
+                                    <i class="ti-pencil-alt"></i>
+                                </a>
+                                <a href="#" rel="tooltip" title="Borrar" class="btn btn-danger btn-simple btn-xs">
+                                    <i class="ti-close"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detelles del programa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form class="form-horizontal">
+               
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Nombre del programa</label>
+                        <div class="col-sm-8">
+                            <p class="form-control-static">Programa 1</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Nombre del programa</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Nombre del programa" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label">Acciones</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" placeholder="Acciones" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Indicador</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Indicador" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Meta</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Meta" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Unidad de medida</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Unidad de medida" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Frecuencia de reporte</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Frecuencia de reporte" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Cantidad</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Cantidad" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Responsable</label>
+                        <div class="col-md-8">
+                            <input type="email" placeholder="Responsable" class="form-control">
+                        </div>
+                    </div>
+                
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#justificacionModal" >Justificación</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="justificacionModal" tabindex="-1" role="dialog" aria-labelledby="justificacionModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="justificacionModalLabel">Justificación de no avance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Causa</label>
+                    <div class="col-sm-8">
+                        <select name="cities" class="form-control">
+                            <option selected="" disabled="">Seleccione una opción</option>
+                            <option value="4.0">Opción 1</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label">Descipción de motivos</label>
+                    <div class="col-sm-8">
+                        <textarea class="form-control" placeholder="Descipción de motivos" rows="3"></textarea>
+                    </div>
+                </div>
+            </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>

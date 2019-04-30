@@ -1,0 +1,242 @@
+<input type="hidden" id="url_base" value="{{head.url_base}}" >
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="left-vertical-tabs">
+                        <ul class="nav nav-stacked" role="tablist">
+                            <li class="active">
+                                <a href="#programas_tab" role="tab" data-toggle="tab">
+                                        Programas
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#objetivos_tab" role="tab" data-toggle="tab">
+                                        Objetivos
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#acciones_tab" role="tab" data-toggle="tab">
+                                        Acciones
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right-text-tabs ">
+                        <!-- Tab panes -->
+                        <div class="tab-content"  style="background-color: rgba(50,50,50,0.15);">
+                            <div class="tab-pane active" id="programas_tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <form method="#" action="#">
+                                                <div class="card-header">
+                                                    <h4 class="card-title">
+                                                        Catálogo de programas
+                                                    </h4>
+                                                </div>
+                                                <div class="card-content">
+                                                    <a href="#" id="username" data-type="text" data-t="1" data-pk="1" data-title="Enter username">Nuevo programa</a>
+                                                  
+                                                </div>
+                                            </form>
+                                        </div> <!-- end card -->
+                                    </div> <!--  end col-md-6  -->
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Lista de programas actuales</h4>
+                                                <p class="category">Último ingreso de programa 20/04/2019</p>
+                                            </div>
+                                            <div class="card-content table-responsive table-full-width">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">#</th>
+                                                            <th>Nombre del programa</th>
+                                                            <th class="text-right">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td>Programa 1</td>
+                                                            <td class="td-actions text-right">
+                                                                <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                                                    <i class="ti-pencil-alt"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="objetivos_tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <form method="#" action="#">
+                                                <div class="card-header">
+                                                    <h4 class="card-title">
+                                                        Objetivos
+                                                    </h4>
+                                                </div>
+                                                <div class="card-content">
+                                                
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                        Nombre del programa
+                                                        </label>
+                                                        <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
+                                                            -->
+                                                        <select name="cities" class="form-control">
+                                                            <option selected="" disabled="">Seleccione una opción</option>
+                                                            <option value="4.0">Opción 1</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                        Nombre de la acción
+                                                        </label>
+                                                        <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
+                                                            -->
+                                                        <select name="cities" class="form-control">
+                                                            <option selected="" disabled="">Seleccione una opción</option>
+                                                            <option value="4.0">Opción 1</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                        Objetivos
+                                                        </label>
+                                                       <select id="multi-append" class="form-control selec-multiple" multiple>
+                                                        <option></option>
+                                                        <option value="A">A</option>
+                                                        <option value="B">B</option>
+                                                        <option value="C">C</option>
+                                                    </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        
+                                                        <button type="submit" class="btn btn-fill btn-info">Guardar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div> <!-- end card -->
+                                    </div> <!--  end col-md-6  -->
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Lista de programas actuales</h4>
+                                                <p class="category">Último ingreso de programa 20/04/2019</p>
+                                            </div>
+                                            <div class="card-content table-responsive table-full-width">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">#</th>
+                                                            <th>Objetivos</th>
+                                                            <th>Nombre del programa</th>
+                                                            <th>Nombre de la acción</th>
+                                                            <th class="text-right">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td>Objetivo 1,Objetivo 2</td>
+                                                            <td>Programa</td>
+                                                            <td>Acción</td>
+                                                            <td class="td-actions text-right">
+                                                                <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                                                    <i class="ti-pencil-alt"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="acciones_tab">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <form method="#" action="#">
+                                                <div class="card-header">
+                                                    <h4 class="card-title">
+                                                        Acciones
+                                                    </h4>
+                                                </div>
+                                                <div class="card-content">
+                                                
+                                                    <div class="form-group">
+                                                        <label class="control-label">
+                                                        Nombre del programa
+                                                        </label>
+                                                        <!--     IMPORTANT! - the "bootstrap select picker" is not compatible with jquery.validation.js, that's why we use the "default select" inside this wizard. We will try to contact the guys who are responsibble for the "bootstrap select picker" to find a solution. Thank you for your patience.
+                                                            -->
+                                                        <select name="cities" class="form-control">
+                                                            <option selected="" disabled="">Seleccione una opción</option>
+                                                            <option value="4.0">Opción 1</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-sm-2 control-label">Acciones</label>
+                                                        <div class="col-sm-10">
+                                                            <textarea class="form-control" placeholder="Escriba aquí las acciones" rows="3"></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        
+                                                        <button type="submit" class="btn btn-fill btn-info">Guardar</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div> <!-- end card -->
+                                    </div> <!--  end col-md-6  -->
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h4 class="card-title">Lista de acciones actuales</h4>
+                                                <p class="category">Último ingreso de programa 20/04/2019</p>
+                                            </div>
+                                            <div class="card-content table-responsive table-full-width">
+                                                <table class="table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center">#</th>
+                                                            <th>Nombre de la acción</th>
+                                                            <th class="text-right">Acciones</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td>Acción 1</td>
+                                                            <td class="td-actions text-right">
+                                                                <a href="#" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                                                    <i class="ti-pencil-alt"></i>
+                                                                </a>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

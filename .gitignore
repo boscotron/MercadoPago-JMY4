@@ -1,3 +1,5 @@
+.firebaserc
+functions/config/key.js
 # Logs
 logs
 *.log
@@ -74,3 +76,4 @@ typings/
 
 # FuseBox cache
 .fusebox/
+functions/config/key.zip

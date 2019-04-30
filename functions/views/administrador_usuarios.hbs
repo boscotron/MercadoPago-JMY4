@@ -1,0 +1,451 @@
+<input type="hidden" id="url_base" value="{{head.url_base}}" >
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3 col-xs-6">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="icon-big icon-warning text-center">
+									<i class="fa fa-user"></i>
+								</div>
+							</div>
+							<div class="col-xs-7">
+								<div class="numbers">
+									<p class="jmy_web" data-t="plantillas_web" data-a="vistaweb" data-id="titulo_capacidad"  data-idf="administrador_usuarios" data-ver="on">{{vistaweb.titulo_capacidad}}</p>
+									105 {{vistaweb.usuarios}}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<hr />
+						<div class="stats">
+							<div class="pull-right" style="position:relative; display:inline-block;"><i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" rel="tooltip" title="Usuarios registrados en el sistema"></i></div>
+							<i class="fa fa-clipboard"></i><div class="my-inline-block" id="campaign-name4"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="icon-big icon-success text-center">
+									<i class="fa fa-users"></i>
+								</div>
+							</div>
+							<div class="col-xs-7">
+								<div class="numbers">
+									<p class="jmy_web" data-t="plantillas_web" data-a="vistaweb" data-id="titulo_clientes"  data-idf="administrador_usuarios" data-ver="on">{{vistaweb.titulo_clientes}}</p>
+									45
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<hr />
+						<div class="stats">
+							<i class="fa fa-calendar"></i> Activos durante este año
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="icon-big icon-danger text-center">
+									<i class="fa fa-building"></i>
+								</div> 
+							</div>
+							<div class="col-xs-7">
+								<div class="numbers">
+									<p class="jmy_web" data-t="plantillas_web" data-a="vistaweb" data-id="titulo_empresas"  data-idf="administrador_usuarios" data-ver="on">empresas</p>
+									23
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<hr />
+						<div class="stats">
+							<i class="fa fa-timer"></i> Activas en el último año
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="icon-big icon-info text-center">
+									<i class="fas fa-user-check"></i>
+								</div>
+							</div>
+							<div class="col-xs-7">
+								<div class="numbers">
+									<p>Usuarios Activos</p>
+									5
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<hr />
+						<div class="stats">
+							<i class="far fa-clock"></i> Actualizado ahora
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 col-sm-6">
+				 <div class="card">
+					<div class="card-content">
+						<div id="acordeon">
+							<div class="panel-group" id="accordion">
+								<div class="panel panel-border panel-default">
+									<a data-toggle="" href="#collapseOne" class="tab_lista ver_usuarios">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												Lista de usuarios
+												<button type="button" class="actualizar_usuarios btn btn-sm btn-round"> <i class="fas fa-refresh"></i></button>
+												<i class="fas fa-angle-down"></i>
+  												<i class="fas fa-spinner fa-pulse loading_lista"></i>
+											</h4>
+										</div>
+									</a>
+									<div id="collapseOne" class="panel-collapse collapse in" class="body_lista">
+										<div class="panel-body">
+											  <div class="tabla-usuarios-toolbar">
+												<!--Here you can write extra buttons/actions for the toolbar-->
+											</div>
+											<table id="tabla-usuarios" class="table">
+												<thead>
+													<th data-field="state" data-checkbox="true"></th>
+													<th data-field="id" class="text-center">Nombre</th>
+													<th data-field="name" data-sortable="true">Registro</th>
+													<th data-field="actions" class="td-actions text-right" data-events="operateEvents" data-formatter="operateFormatterUsuarios">&nbsp;</th>
+												</thead>
+												<tbody>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-border panel-default">
+									<a data-toggle="collapse" href="#collapseTwo" class="tab_editor">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												Editar usuario
+												<i class="fas fa-angle-down"></i>
+  												<i class="fas fa-spinner fa-pulse loading_editor"></i>
+											</h4>
+										</div>
+									</a>
+									<div id="collapseTwo" class="panel-collapse collapse" class="body_editor">
+										<div class="panel-body">
+											<form>
+												<div class="row">
+													<div class="col-md-5">
+														<div class="form-group">
+															<label>Empresa / Organización</label>
+															<input type="text" id="nombre_empresa" class="formulario-usuario form-control border-input"  placeholder="Empresa / Organización" value="">
+														</div>
+													</div>
+													<div class="col-md-3">
+														<div class="form-group">
+															<label>Usuario</label>
+															<input type="text" id="usuario" class="formulario-usuario form-control border-input" disabled placeholder="Usuario" value="">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label for="exampleInputEmail1">Email</label>
+															<input type="email" id="email" class="formulario-usuario form-control border-input" placeholder="Email">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>Nombre(s)</label>
+															<input type="text" class="formulario-usuario form-control border-input" placeholder="Nombre" id="nombre" value="">
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>Apellidos</label>
+															<input type="text" class="formulario-usuario form-control border-input" placeholder="Apellido" id="apellido" value="">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>Fecha de naciemiento</label>
+															<input type="text" class="formulario-usuario form-control border-input" placeholder="Fecha de naciemiento" id="fecha_de_naciemietno" value="">
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>Nacionalidad</label>
+															<input type="text" class="formulario-usuario form-control border-input" placeholder="Nacionalidad" id="nacionalidad" value="">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label>Dirección</label>
+															<input type="text" id="direccion" class="formulario-usuario form-control border-input" placeholder="Calle, número, colonia" value="">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>Ciudad</label>
+															<input type="text" id="ciudad" class="formulario-usuario form-control border-input" placeholder="Ciudad" value="">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>País</label>
+															<input type="text" id="pais" class="formulario-usuario form-control border-input" placeholder="País" value="Austrlia">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>Código postal</label>
+															<input type="number" id="codigo_postal" class="formulario-usuario form-control border-input" placeholder="ZIP Code">
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label>Acerca de</label>
+															<textarea rows="5" id="aceca_de" class="formulario-usuario form-control border-input" placeholder="Here can be your description" value="">
+					
+															</textarea>
+														</div>
+													</div>
+												</div>
+												<div class="text-center">
+													<button type="button" id="guardar-usuario" class="btn btn-info btn-fill btn-wd">Guardar</button>
+												</div>
+												<div class="clearfix"></div>
+											</form>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-border panel-default">
+									<a data-toggle="collapse" href="#collapseThree" class="tab_editor">
+										<div class="panel-heading">
+											<h4 class="panel-title">
+												Módulos
+												<i class="fas fa-angle-down"></i>
+  												<i class="fas fa-spinner fa-pulse loading_editor"></i>
+											</h4>
+										</div>
+									</a>
+									<div id="collapseThree" class="panel-collapse collapse" class="body_editor">
+										<div class="panel-body">
+											<input type="hidden" id="uid" value="{{usuario.uid}}" >
+											 <h5 class="card-title">Módulos</h5>
+											<h6 class="card-subtitle mb-2 text-muted">Accesos a los módulos de este sitio</h6>
+											<p class="card-text">Edite los permisos que dese darle al usuario.</p>
+												<div class="text-center">
+													<button type="button" id="guardar_modulos" class="btn btn-info btn-fill btn-wd"  >Guardar</button>
+												</div>
+											<table id="bootstrap-table" class="table">
+												<thead>
+													<th data-field="state" data-checkbox="true"></th>
+													<th data-field="id" class="text-center">Módulo</th>
+													<th data-field="name" data-sortable="true">Permiso</th>
+												</thead>
+												<tbody>
+													{{#cargab out.modulos}}														
+													<tr>
+														<td></td>
+														<td>{{nombre}}</td>
+														<td class="form">
+														 <div class="form-group">
+															<select class="form-control modulos_def" id="sele_{{api}}" data-def="{{modulo.permisos}}" data-api="{{api}}" >
+																{{#carga niveles}}
+																		<option value="{{c}}"> {{nombre}} </option>					
+																{{/carga}}
+															</select>
+														</div>
+														</td>
+														
+													</tr>
+													{{/cargab}}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!--  end acordeon -->
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-lg-4 col-md-5">
+				<div class="card card-user" id="card_nuevo_perfil">
+					<div class="image">
+						<img src="{{head.cdn}}assets/img/background.jpg" alt="..."/>
+					</div>
+					<div class="card-content">
+						<div class="author">
+							<img class="avatar border-white" src="{{head.cdn}}assets/img/faces/nuevo.jpg" id="usuario_foto" alt=""/>
+							<h4 class="card-title jmy_web" data-a="administrador" data-idf="{{usuario.uid}}" data-id="perfil-nombre" data-t="usuarios">
+							</h4>
+							<small><a href="#" class="jmy_web" data-id="email"></a></small>
+						</div>
+						<p class="description text-center">
+							Solo ingresa su correo electronico <br>
+							o su número de celular para <br>
+							enviarle un link de invitación.
+						</p>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1" id="ver_mi_perfil">
+								<h5><i class="far fa-user"></i><br /><small>Ver mi perfil</small></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card-user" id="card_editar_perfil">
+					<div class="image">
+						<img src="{{head.cdn}}assets/img/background.jpg" alt="..."/>
+					</div>
+					<div class="card-content">
+						<div class="author">
+							<img class="avatar border-white" src="{{usuario.foto}}" alt=""/>
+							<h4 class="card-title jmy_web"  data-a="administrador" data-idf="{{usuario.uid}}" data-id="perfil-nombre" data-t="usuarios" >{{usuario.nombre}}</h4><br />
+								<small><a href="#">{{usuario.email}}</a></small>
+							
+						</div>
+						<p class="description text-center">
+							{{empresa.nombre}}<br>
+						</p>
+					</div>
+					<hr>
+					<div class="text-center">
+						<div class="row">
+							<div class="col-md-3 col-md-offset-1">
+								<h5>12<br/><small>Hrs en línea</small></h5>
+							</div>
+							<div class="col-md-4">
+								<h5>28% - 2GB <br/><small>Internet</small></h5>
+							</div>
+							<div class="col-md-3">
+								<h5>$14.99<br/><small>Cuenta</small></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card card-user" id="card_ver_perfil">
+					<div class="image">
+						<img src="{{head.cdn}}assets/img/background.jpg" alt="..."/>
+					</div>
+					<div class="card-content">
+						<div class="author">
+							<img class="avatar border-white" src="{{usuario.foto}}" alt=""/>
+							<h4 class="card-title jmy_web"  data-a="administrador" data-idf="{{usuario.uid}}" data-id="perfil-nombre" data-t="usuarios" data-ver="on">{{usuario.nombre}}</h4><br />
+								<small><a href="#">{{usuario.email}}</a></small>
+						</div>
+						<p class="description text-center">
+							{{empresa.nombre}}<br>
+						</p>
+					</div>
+					<hr>
+					<div class="text-center">
+						<div class="row">
+							<div class="col-md-3 col-md-offset-1">
+								<h5>12<br/><small>Hrs en línea</small></h5>
+							</div>
+							<div class="col-md-4">
+								<h5>28% - 2GB <br/><small>Internet</small></h5>
+							</div>
+							<div class="col-md-3">
+								<h5>$14.99<br/><small>Cuenta</small></h5>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card" id="equipo_de_trabajo">
+					<div class="card-header">
+						<h4 class="card-title">Equipo de trabajo</h4>
+					</div>
+					<div class="card-content">
+						<ul class="list-unstyled team-members">
+							<li>
+								<div class="row">
+									<div class="col-xs-3">
+										<div class="avatar">
+											<img src="{{head.cdn}}assets/img/faces/face-0.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										DJ Khaled
+										<br />
+										<span class="text-muted"><small>Offline</small></span>
+									</div>
+									<div class="col-xs-3 text-right">
+										<btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
+										<btn class="btn btn-sm btn-info btn-icon"><i class="fa fa-user"></i></btn>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-xs-3">
+										<div class="avatar">
+											<img src="{{head.cdn}}assets/img/faces/face-1.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										Creative Tim
+										<br />
+										<span class="text-success"><small>Available</small></span>
+									</div>
+									<div class="col-xs-3 text-right">
+										<btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
+										<btn class="btn btn-sm btn-info btn-icon"><i class="fa fa-user"></i></btn>
+									</div>
+								</div>
+							</li>
+							<li>
+								<div class="row">
+									<div class="col-xs-3">
+										<div class="avatar">
+											<img src="{{head.cdn}}assets/img/faces/face-3.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+										</div>
+									</div>
+									<div class="col-xs-6">
+										Flume
+										<br />
+										<span class="text-danger"><small>Busy</small></span>
+									</div>
+									<div class="col-xs-3 text-right">
+										<btn class="btn btn-sm btn-success btn-icon"><i class="fa fa-envelope"></i></btn>
+										<btn class="btn btn-sm btn-info btn-icon"><i class="fa fa-user"></i></btn>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

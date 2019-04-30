@@ -1,0 +1,102 @@
+<div class="content">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-3 col-xs-6">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="icon-big icon-warning text-center">
+									<i class="fa fa-user"></i>
+								</div>
+							</div>
+							<div class="col-xs-7">
+								<div class="numbers">
+									<p class="jmy_web_div" data-page="vistaweb" id="capacidad" data-editor="no">
+										MXN</p>
+									$530
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<hr />
+						<div class="stats">
+							<div class="pull-right" style="position:relative; display:inline-block;"><i class="fa fa-question-circle" data-toggle="tooltip" data-placement="top" rel="tooltip" title="Usuarios registrados en el sistema"></i></div>
+							<i class="fa fa-clipboard"></i><div class="my-inline-block" id="campaign-name4"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-6">
+				<div class="card">
+					<div class="card-content">
+						<div class="row">
+							<div class="col-xs-5">
+								<div class="icon-big icon-success text-center">
+									<i class="fa fa-users"></i>
+								</div>
+							</div>
+							<div class="col-xs-7">
+								<div class="numbers">
+									<p>USD</p>
+									$136
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card-footer">
+						<hr />
+						<div class="stats">
+							<i class="fa fa-dollar"></i> 
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col-lg-12 col-sm-12">
+				 <div class="card">
+					<div class="card-content">
+					<table id="bootstrap-table" class="table">
+                    <thead>
+                        <th data-field="state" data-checkbox="true"></th>
+                        <th data-field="dia" class="text-center">Día</th>
+                        <th data-field="inout" class="text-center">Entrada/Salida</th>
+                        <th data-field="concepto" class="text-center">Concepto</th>
+                        <th data-field="usuario" class="text-center">Usuario</th>
+                        <th data-field="concepto" class="text-center">Concepto</th>
+                        <th data-field="concepto" class="text-center">Concepto</th>
+                        <th data-field="concepto" class="text-center">Concepto</th>
+                        <th data-field="concepto" class="text-center">Concepto</th>
+                        <th data-field="concepto" class="text-center">Concepto</th>
+                        <th data-field="name" data-sortable="true">Permiso</th>
+                    </thead>
+                    <tbody>
+                        {{#cargab out.modulos}}														
+                        <tr>
+                            <td></td>
+                            <td>{{nombre}} {{modulo.permisos}}</td>
+                            <td class="form">
+                                <div class="form-group">
+                                <select class="form-control modulos_def" id="exampleFormControlSelect2" data-def="{{modulo.permisos}}" data-api="{{api}}" >
+                                    {{#carga niveles}}
+                                            <option value="{{c}}"> {{nombre}} </option>					
+                                    {{/carga}}
+                                </select>
+                            </div>
+                            </td>
+                            
+                        </tr>
+                        {{/cargab}}
+                    </tbody>
+                </table>
+					</div>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
