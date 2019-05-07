@@ -4,7 +4,8 @@
   "dependencies": {
     "@google-cloud/language": "^1.1.0",
     "body-parser": "^1.19.0",
-    "comsis_jmy": "^1.0.19043003",
+    "comsis_jmy": "^1.0.19050301",
+    "comsis_jmy_admin": "0.0.19050102",
     "consolidate": "^0.15.1",
     "cook": "^0.5.2",
     "cookie-encrypter": "^1.0.1",

@@ -66,7 +66,9 @@ app.get('/instalar', jmy.sesion(jmy_connect.key),jmy.instalar());
 app.get('/administrador/:c', jmy.sesion(jmy_connect.key),jmy.administrador_g());
 app.post('/administrador/:c/:p', jmy.sesion(jmy_connect.key),jmy.administrador_p());
 
+
 app.get('/', jmy.sesion(jmy_connect.key),async (req, res) => {
+
   const post = req.body;
   let acceso = req.accesos
   try {      
@@ -197,7 +199,18 @@ app.get('/pago/cancelar/:id',jmy.sesion(jmy_connect.key), async (req, res) => {
 
 // Notificaciones ---Pendiente---
 app.get('/notificaciones',jmy.sesion(jmy_connect.key), async (req, res) => {
-  res.sendStatus(200);
+  try{
+    mercadopago.ipn.manage(req).then(function (data) {
+      res.render('jsonOutput', {
+        result: data
+      });
+      console.log(data);
+    });
+  }catch(error){
+    console.log('Error detecting sentiment or saving message', error.message);
+    res.sendStatus(500);
+  }
+  // res.sendStatus(200);
 });
 
 ///////////////// Fin de mp ////////////////////
