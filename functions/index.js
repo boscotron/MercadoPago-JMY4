@@ -31,19 +31,18 @@ const client = new language.LanguageServiceClient();
 
 /////////////////////////////
 const express = require('express');
-const engines = require('consolidate');
-const hbs = require('hbs');
 const app = express();
 ///////
 const path = require('path');
-const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mercadopago = require('mercadopago');
 ///
-const jmy = require('comsis_jmy');
 const jmy_connect= require('./config/key.js');
+const jmyServerLicencias ="https://us-central1-concomsis.cloudfunctions.net/app/";
+///
+// AXIOS
 
 app.use(express.static(__dirname + '/public'));
 
@@ -54,32 +53,29 @@ mercadopago.configure({
 });
 
 
-app.set('view engine',"hbs");
 app.set('json spaces',6);
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(jmy.co);
-let context = jmy.context;
-app.get('/sesion/:i/:t',jmy.entrar(jmy_connect.key),jmy.auth());
-app.get('/instalar', jmy.sesion(jmy_connect.key),jmy.instalar());
-app.get('/administrador/:c', jmy.sesion(jmy_connect.key),jmy.administrador_g());
-app.post('/administrador/:c/:p', jmy.sesion(jmy_connect.key),jmy.administrador_p());
 
-
-app.get('/', jmy.sesion(jmy_connect.key),async (req, res) => {
+app.get('/',async (req, res) => {
 
   const post = req.body;
-  let acceso = req.accesos
   try {      
     console.log('post',post);
-    let data=context(req);
     res.render('index',data);    
   } catch(error) {
     console.log('Error detecting sentiment or saving message', error.message);
     res.sendStatus(500);
   }
 });
+
+/*
+app.post.verEmpresa( axios((jmyServerLicencias)) )
+
+app.post.verLicencias(axios((jmyServerLicencias)))
+
+*/
 
 ////////////// Pruebas de mp ////////////////////
 
@@ -117,16 +113,13 @@ let productos = {
 };
 
 // Prueba de vista en templet
-app.get('/mp',jmy.sesion(jmy_connect.key), async (req, res) => {
-  let data=context(req);
-  data.head.title='Prueba Vista';
-  data.out={ola:"Mensaje de prueba"};
-  // console.log(req);  
-  res.render('pago',data);
+app.get('/mp', async (req, res) => {
+ 
+  res.json({});
 });
 
 // Crear una preferencia de pago
-app.get('/pago/pagar/:id',jmy.sesion(jmy_connect.key), async (req, res) => {
+app.get('/pago/pagar/:id', async (req, res) => {
   let id = req.params.id;
   let op = productos[id];
   console.log('id: ' + id, 'Producto elegido: ' , op);
@@ -150,13 +143,10 @@ app.get('/pago/pagar/:id',jmy.sesion(jmy_connect.key), async (req, res) => {
   if(op){
     mercadopago.preferences.create(preference).then(function (preference) {
       const p = preference;
-      let data=context(req);
       console.log('Información de la preferencia',p.body);
-      data.head.title='Realizar Pago';
-      data.out = {prod:p.body.items[0].title,urlPago:p.body.sandbox_init_point};
       
       // console.log('Informacion pasada a la vista', p.body.sandbox_init_point);
-      res.render('pago', data);
+      res.json( {prod:p.body.items[0].title,urlPago:p.body.sandbox_init_point});
     }).catch(function (error) {
       console.log(error);
       res.sendStatus(500);
@@ -165,7 +155,7 @@ app.get('/pago/pagar/:id',jmy.sesion(jmy_connect.key), async (req, res) => {
 });
 
 // Obtener todos los pagos
-app.get('/pago/obtener',jmy.sesion(jmy_connect.key), async (req, res) => {
+app.get('/pago/obtener', async (req, res) => {
   mercadopago.payment.search({
     qs: {
       'collector.id': 'me'
@@ -179,7 +169,7 @@ app.get('/pago/obtener',jmy.sesion(jmy_connect.key), async (req, res) => {
 });
 
 // Cancelar pago 
-app.get('/pago/cancelar/:id',jmy.sesion(jmy_connect.key), async (req, res) => {
+app.get('/pago/cancelar/:id', async (req, res) => {
   let id_pago = req.params.id;
   console.log('id de pago: ', id_pago);
   
@@ -198,10 +188,10 @@ app.get('/pago/cancelar/:id',jmy.sesion(jmy_connect.key), async (req, res) => {
 });
 
 // Notificaciones ---Pendiente---
-app.get('/notificaciones',jmy.sesion(jmy_connect.key), async (req, res) => {
+app.get('/notificaciones', async (req, res) => {
   try{
     mercadopago.ipn.manage(req).then(function (data) {
-      res.render('jsonOutput', {
+      res.json({
         result: data
       });
       console.log(data);
